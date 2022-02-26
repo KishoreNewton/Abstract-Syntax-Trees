@@ -1,0 +1,23 @@
+{
+  "name": "audit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/parser": "^7.17.3",
+    "@babel/traverse": "^7.17.3",
+    "glob": "^7.2.0",
+    "ts-node": "^10.5.0",
+    "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/babel__traverse": "^7.14.2",
+    "@types/glob": "^7.2.0"
+  }
+}
