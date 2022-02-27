@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-
 export const Equation = ({
   left,
   operator,
@@ -11,15 +10,13 @@ export const Equation = ({
   onWrongAnimationEnd,
   onCorrectAnimationEnd,
 }) => {
-  const ref = React.useRef();
+  const ref = React.useRef(); // Re-focus the answer input anytime we change into the waiting state.
 
-  // Re-focus the answer input anytime we change into the waiting state.
   React.useEffect(() => {
     if (answerStatus === "waiting" && ref.current) {
       ref.current.focus();
     }
   }, [answerStatus]);
-
   return (
     <div className="equation__container">
       <div className="equation__left-hand-side">
@@ -43,9 +40,11 @@ export const Equation = ({
             case "wrong":
               onWrongAnimationEnd();
               break;
+
             case "correct":
               onCorrectAnimationEnd();
               break;
+
             default:
               break;
           }

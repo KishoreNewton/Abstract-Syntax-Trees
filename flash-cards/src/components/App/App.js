@@ -5,7 +5,6 @@ import { LandingPage } from "../LandingPage/LandingPage";
 import { LogIn } from "../LogIn/LogIn";
 import { SignUp } from "../SignUp/SignUp";
 import { Nav } from "../Nav/Nav";
-
 export const App = () => {
   const [currentPage, setCurrentPage] = React.useState("landingPage");
 
@@ -13,10 +12,13 @@ export const App = () => {
     switch (currentPage) {
       case "logIn":
         return <LogIn setCurrentPage={setCurrentPage} />;
+
       case "dashboard":
         return <Dashboard />;
+
       case "signUp":
         return <SignUp setCurrentPage={setCurrentPage} />;
+
       case "landingPage":
       default:
         return <LandingPage setCurrentPage={setCurrentPage} />;
