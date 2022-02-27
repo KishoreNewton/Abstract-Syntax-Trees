@@ -1,11 +1,10 @@
+import { Button } from "../Button/Button.js";
 import React from "react";
-
 export const LogIn = ({ setCurrentPage }) => {
   const [error, setError] = React.useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const { username, password } = event.currentTarget;
 
     if (username.value && password.value) {
@@ -36,9 +35,9 @@ export const LogIn = ({ setCurrentPage }) => {
         Password
         <input type="password" name="password" className="form__input" />
       </label>
-      <button type="submit" className="button button--secondary button--block">
+      <Button variant="secondary" block>
         <span role="img">🔐</span> Log In
-      </button>
+      </Button>
       <p className="form__help-text">
         Note: this is a dummy form and won't persist anything. Fill the fields
         with any value to continue.

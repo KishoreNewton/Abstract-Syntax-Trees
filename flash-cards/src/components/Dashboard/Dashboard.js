@@ -1,10 +1,9 @@
+import { Button } from "../Button/Button.js";
 import React from "react";
 import { Equation } from "../Equation/Equation";
 import { Select } from "../Select/Select";
 import { generateEquation } from "../../helpers";
-
 const NUMBER_OF_EQUATIONS_OPTIONS = [3, 5, 10, 25, 50, 100, "∞"];
-
 export const Dashboard = () => {
   const [equation, setEquation] = React.useState(null);
   const [currentAnswer, setCurrentAnswer] = React.useState("");
@@ -39,6 +38,7 @@ export const Dashboard = () => {
     setCurrentAnswer("");
     setAnswerStatus("waiting");
   };
+
   const handleCorrectAnimationEnd = () => {
     setCurrentAnswer("");
     setAnswerStatus("waiting");
@@ -66,13 +66,9 @@ export const Dashboard = () => {
         <p className="dashboard__complete-description">
           You got {totalCorrect} correct!
         </p>
-        <button
-          type="button"
-          className="button button--primary"
-          onClick={handleStartOver}
-        >
+        <Button type="button" onClick={handleStartOver}>
           <span role="img">♻</span> Start over
-        </button>
+        </Button>
       </div>
     );
   } else if (equation) {
@@ -87,17 +83,13 @@ export const Dashboard = () => {
           onCorrectAnimationEnd={handleCorrectAnimationEnd}
         />
         <div className="dashboard__button-group">
-          <button
-            type="button"
-            className="button button--danger"
-            onClick={handleSkip}
-          >
+          <Button type="button" variant="danger" onClick={handleSkip}>
             <span role="img">🚫</span> Skip
-          </button>
+          </Button>
           <div>
-            <button type="submit" className="button button--primary">
+            <Button>
               <span role="img">👉</span> Submit answer
-            </button>
+            </Button>
             <p className="dashboard__total-correct">
               Total Correct: {totalCorrect}
             </p>
@@ -132,9 +124,9 @@ export const Dashboard = () => {
           correctly.
         </p>
         <div className="dashboard__get-started-action">
-          <button className="button button--primary" onClick={handleStart}>
+          <Button onClick={handleStart}>
             <span role="img">🚦</span> Go!
-          </button>
+          </Button>
         </div>
       </>
     );

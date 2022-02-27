@@ -1,3 +1,4 @@
+import { Button } from "../Button/Button.js";
 export const Nav = ({ currentPage, setCurrentPage }) => (
   <nav className="nav__container">
     <h1 className="nav__logo">
@@ -18,33 +19,29 @@ export const Nav = ({ currentPage, setCurrentPage }) => (
     <ul className="nav__buttons">
       {currentPage === "dashboard" ? (
         <li>
-          <button
+          <Button
             type="button"
-            className="button button--secondary"
+            variant="secondary"
             onClick={() => setCurrentPage("logIn")}
           >
             <span role="img">🔓</span> Log out
-          </button>
+          </Button>
         </li>
       ) : (
         <>
           <li>
-            <button
+            <Button
               type="button"
-              className="button button--secondary"
+              variant="secondary"
               onClick={() => setCurrentPage("logIn")}
             >
               <span role="img">🔐</span> Log in
-            </button>
+            </Button>
           </li>
           <li>
-            <button
-              type="button"
-              className="button button--primary"
-              onClick={() => setCurrentPage("signUp")}
-            >
+            <Button type="button" onClick={() => setCurrentPage("signUp")}>
               <span role="img">📝</span> Sign up
-            </button>
+            </Button>
           </li>
         </>
       )}
